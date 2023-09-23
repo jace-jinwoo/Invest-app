@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function App() {
   const [userInput, setUserINput] = useState(null);
+
   const calculateHandler = (userInput) => {
     setUserINput(userInput);
   };
@@ -33,7 +34,11 @@ function App() {
     <div>
       <Header />
       <UserInput onCalculate={calculateHandler} />
-      <ResultsTable />
+
+      {!userInput && <p>No investment calculated yet.</p>}
+      {userInput && (
+        <ResultsTable data={yearlyData} initialInvestment={10000} />
+      )}
     </div>
   );
 }

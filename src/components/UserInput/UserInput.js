@@ -20,12 +20,6 @@ const UserInput = (props) => {
   };
   const changeHandler = (e) => {
     const { id, value } = e.target;
-
-    console.log(`${id} ::  ${value}`);
-  };
-
-  const inputChangeHandler = (e) => {
-    const { id, value } = e.target;
     setUserInput((prevInput) => {
       return {
         ...prevInput,
